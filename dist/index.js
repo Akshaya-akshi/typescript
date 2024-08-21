@@ -1,11 +1,12 @@
 "use strict";
-//DataTypes
 let a = 10;
 let b = 20;
 function add(a, b) {
     return a + b;
 }
 console.log(add(a, b), "add");
+let x = 8;
+console.log(x);
 let str1 = "Akshaya";
 let str2 = "Akshi";
 function merge(str1, str2) {
@@ -19,12 +20,9 @@ let person = {
     age: 21,
 };
 console.log(person);
-//Type Alias
-let x = 8;
-console.log(a);
 let coordinates = {
-    x: 20,
-    y: 20
+    w: "type",
+    x: "script"
 };
 console.log(coordinates);
 //Inline Type Annotations:
@@ -38,11 +36,37 @@ greet({ name: "Akshaya", age: 22 });
 let result;
 result = 42;
 result = "Hello";
-var Color;
-(function (Color) {
-    Color[Color["Red"] = 0] = "Red";
-    Color[Color["Green"] = 1] = "Green";
-    Color[Color["Blue"] = 2] = "Blue";
-})(Color || (Color = {}));
-let favoriteColor = Color.Blue;
-console.log(Color);
+console.log(result);
+//enums
+var StatusCodes;
+(function (StatusCodes) {
+    StatusCodes[StatusCodes["NotFound"] = 404] = "NotFound";
+    StatusCodes[StatusCodes["Success"] = 200] = "Success";
+    StatusCodes[StatusCodes["Accepted"] = 202] = "Accepted";
+    StatusCodes[StatusCodes["BadRequest"] = 400] = "BadRequest";
+})(StatusCodes || (StatusCodes = {}));
+console.log(StatusCodes.NotFound);
+console.log(StatusCodes.Success);
+//generics
+function createPair(X, Y) {
+    return [X, Y];
+}
+console.log(createPair('HELLO', 2001));
+function identity(arg) {
+    return arg;
+}
+let str = identity("Hello");
+let num = identity(2001);
+console.log(str);
+console.log(num);
+let abcd = (x, y) => x + y;
+let sum = abcd(5, 3);
+console.log(sum);
+//class types
+class Dog {
+    constructor(breed) {
+        this.breed = breed;
+    }
+}
+let myDog = new Dog("Golden Retriever");
+console.log(myDog.breed);
