@@ -17,7 +17,7 @@ let Abc = ["typescript", true];
 console.log(Abc);
 let person = {
     name: "Akshaya",
-    age: 21,
+    age: 22,
 };
 console.log(person);
 let coordinates = {

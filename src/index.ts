@@ -28,7 +28,7 @@ interface Person {
  
 let person: Person = {
 	name: "Akshaya",
-	age: 21,
+	age: 22,
 };
 console.log(person)
 
